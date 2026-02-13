@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For AMSHIII ❤️‍🔥🥹😘</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@700&family=Satisfy&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-height:100vh;
-overflow:hidden;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#ff6f91,#ff9671,#ffc75f);
+min-height:100vh;
+overflow-x:hidden;
+font-family:'Quicksand',sans-serif;
+background:linear-gradient(135deg,#ff9a9e 0%,#fecfef 25%,#ffecd2 50%,#fcb69f 75%,#ff6a88 100%);
+background-size:400% 400%;
+animation:gradientFlow 15s ease infinite;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -23,112 +25,456 @@ color:white;
 position:relative;
 }
 
-/* Sparkles */
+@keyframes gradientFlow{
+0%,100%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+}
+
+/* Enhanced Sparkles with glow */
 .sparkle{
 position:absolute;
-width:4px;
-height:4px;
+width:6px;
+height:6px;
 background:white;
 border-radius:50%;
-animation:twinkle 2s infinite alternate;
+box-shadow:0 0 10px rgba(255,255,255,0.8),0 0 20px rgba(255,255,255,0.5);
+animation:sparkleGlow 2s infinite alternate;
 }
 
-@keyframes twinkle{
-from{opacity:0.2;}
-to{opacity:1;}
+@keyframes sparkleGlow{
+from{opacity:0.3;transform:scale(0.5);}
+to{opacity:1;transform:scale(1.2);}
 }
 
-/* Floating Hearts */
+/* Multiple Floating Hearts with variety */
 .heart{
 position:absolute;
 animation:floatUp linear infinite;
-opacity:0.7;
+opacity:0.8;
+filter:drop-shadow(0 0 5px rgba(255,255,255,0.5));
 }
 
 @keyframes floatUp{
-0%{transform:translateY(100vh);}
-100%{transform:translateY(-10vh);}
+0%{transform:translateY(100vh) rotate(0deg);opacity:0;}
+10%{opacity:0.8;}
+90%{opacity:0.8;}
+100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+}
+
+/* Particle effects */
+.particle{
+position:absolute;
+width:3px;
+height:3px;
+background:rgba(255,255,255,0.7);
+border-radius:50%;
+animation:particleFloat 4s linear infinite;
+}
+
+@keyframes particleFloat{
+0%{transform:translateY(0) translateX(0);}
+100%{transform:translateY(-100vh) translateX(50px);opacity:0;}
 }
 
 .container{
 z-index:2;
-padding:20px;
-max-width:90%;
+padding:30px;
+max-width:95%;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+border-radius:40px;
+box-shadow:0 20px 60px rgba(0,0,0,0.2),0 0 0 1px rgba(255,255,255,0.3) inset;
+border:2px solid rgba(255,255,255,0.2);
 }
 
 .rose{
-font-size:65px;
-animation:float 3s ease-in-out infinite;
+font-size:80px;
+animation:roseFloat 3s ease-in-out infinite;
+filter:drop-shadow(0 5px 15px rgba(255,20,100,0.6));
+display:inline-block;
 }
 
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+@keyframes roseFloat{
+0%,100%{transform:translateY(0) rotate(-5deg);}
+50%{transform:translateY(-20px) rotate(5deg);}
 }
 
 h1{
-font-family:'Great Vibes',cursive;
-font-size:2.8rem;
-text-shadow:0 0 20px rgba(255,255,255,0.9);
-margin-bottom:10px;
+font-family:'Pacifico',cursive;
+font-size:3.5rem;
+text-shadow:0 0 30px rgba(255,255,255,1),0 5px 20px rgba(255,100,150,0.8);
+margin:15px 0;
+background:linear-gradient(45deg,#fff,#ffe0e9,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+animation:textShimmer 3s ease-in-out infinite;
+}
+
+@keyframes textShimmer{
+0%,100%{filter:brightness(1);}
+50%{filter:brightness(1.3);}
+}
+
+.subtitle{
+font-family:'Dancing Script',cursive;
+font-size:1.5rem;
+margin:10px 0;
+opacity:0.95;
+text-shadow:0 2px 10px rgba(0,0,0,0.3);
+color:#fff;
 }
 
 .typing{
-font-size:1.3rem;
-min-height:40px;
-margin:15px 0;
+font-family:'Satisfy',cursive;
+font-size:2rem;
+min-height:60px;
+margin:20px 0;
+text-shadow:0 3px 15px rgba(255,255,255,0.8);
+color:#fff;
+}
+
+.typing-cursor{
+display:inline-block;
+width:3px;
+height:1.5rem;
+background:white;
+margin-left:5px;
+animation:blink 0.7s infinite;
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:0;}
 }
 
 .countdown{
-margin:10px 0;
-font-size:1rem;
-opacity:0.9;
+margin:15px 0;
+font-size:1.1rem;
+opacity:0.95;
+background:rgba(255,255,255,0.3);
+padding:10px 20px;
+border-radius:20px;
+display:inline-block;
+font-weight:600;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+color:#fff;
+text-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+
+.button-container{
+position:relative;
+height:100px;
+margin-top:30px;
+display:flex;
+gap:20px;
+justify-content:center;
+align-items:center;
 }
 
 button{
-padding:14px 28px;
-font-size:1rem;
+padding:18px 40px;
+font-size:1.2rem;
+font-weight:700;
 border:none;
-border-radius:30px;
+border-radius:50px;
 cursor:pointer;
-transition:0.3s;
+transition:all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+font-family:'Quicksand',sans-serif;
+letter-spacing:1px;
 }
 
 #yesBtn{
-background:white;
-color:#ff4081;
-font-weight:bold;
-box-shadow:0 0 20px rgba(255,255,255,0.9);
+background:linear-gradient(135deg,#fff,#ffe5ec);
+color:#ff1744;
+box-shadow:0 10px 30px rgba(255,255,255,0.5),0 0 20px rgba(255,23,68,0.3);
+position:relative;
+overflow:hidden;
+}
+
+#yesBtn::before{
+content:'';
+position:absolute;
+top:50%;
+left:50%;
+width:0;
+height:0;
+background:rgba(255,23,68,0.2);
+border-radius:50%;
+transform:translate(-50%,-50%);
+transition:width 0.6s,height 0.6s;
+}
+
+#yesBtn:hover::before{
+width:300px;
+height:300px;
+}
+
+#yesBtn:hover{
+transform:scale(1.1) rotate(-2deg);
+box-shadow:0 15px 40px rgba(255,255,255,0.7),0 0 30px rgba(255,23,68,0.5);
+}
+
+#yesBtn:active{
+transform:scale(1.05);
 }
 
 #noBtn{
-background:#ff4081;
-color:white;
-position:absolute;
+background:linear-gradient(135deg,#bdbdbd,#e0e0e0);
+color:#666;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+transition:all 0.3s ease;
+}
+
+#noBtn.floating{
+position:fixed;
+z-index:999;
+}
+
+#noBtn:hover{
+transform:scale(1.05);
 }
 
 .success{
 display:none;
-font-size:1.6rem;
-margin-top:20px;
-animation:fadeIn 1s forwards;
+font-family:'Dancing Script',cursive;
+font-size:2.2rem;
+margin-top:30px;
+animation:successPop 0.8s cubic-bezier(0.68,-0.55,0.265,1.55) forwards;
+text-shadow:0 3px 10px rgba(0,0,0,0.3);
+line-height:1.5;
+color:#fff;
+font-weight:700;
 }
 
-@keyframes fadeIn{
-from{opacity:0;transform:scale(0.8);}
-to{opacity:1;transform:scale(1);}
+@keyframes successPop{
+from{opacity:0;transform:scale(0.3) rotate(-15deg);}
+to{opacity:1;transform:scale(1) rotate(0deg);}
+}
+
+.heart-burst{
+font-size:4rem;
+margin:20px 0;
+display:inline-block;
+animation:heartBeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartBeat{
+0%,100%{transform:scale(1);}
+10%,30%{transform:scale(1.3);}
+20%,40%{transform:scale(1.1);}
+}
+
+/* Story Section */
+.story-container{
+margin-top:40px;
+padding:30px;
+background:rgba(255,255,255,0.35);
+backdrop-filter:blur(10px);
+border-radius:30px;
+border:2px solid rgba(255,255,255,0.4);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+animation:storyFadeIn 1.5s ease 0.8s backwards;
+}
+
+@keyframes storyFadeIn{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.story-title{
+font-family:'Pacifico',cursive;
+font-size:2.5rem;
+margin-bottom:30px;
+text-shadow:0 3px 15px rgba(255,255,255,0.8);
+animation:titlePulse 2s ease-in-out infinite;
+color:#fff;
+}
+
+@keyframes titlePulse{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.05);}
+}
+
+.timeline{
+position:relative;
+padding:20px 0;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:50%;
+top:0;
+bottom:0;
+width:3px;
+background:linear-gradient(to bottom,rgba(255,255,255,0.6),rgba(255,255,255,0.9),rgba(255,255,255,0.6));
+transform:translateX(-50%);
+border-radius:10px;
+box-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+.timeline-item{
+position:relative;
+margin:40px 0;
+padding:25px;
+background:rgba(255,255,255,0.3);
+border-radius:20px;
+backdrop-filter:blur(5px);
+border:2px solid rgba(255,255,255,0.4);
+animation:itemSlideIn 0.8s ease backwards;
+}
+
+.timeline-item:nth-child(1){animation-delay:1.2s;}
+.timeline-item:nth-child(2){animation-delay:1.6s;}
+.timeline-item:nth-child(3){animation-delay:2s;}
+
+@keyframes itemSlideIn{
+from{opacity:0;transform:translateX(-50px);}
+to{opacity:1;transform:translateX(0);}
+}
+
+.timeline-date{
+font-family:'Pacifico',cursive;
+font-size:1.8rem;
+color:#fff;
+text-shadow:0 2px 10px rgba(0,0,0,0.4);
+margin-bottom:8px;
+}
+
+.timeline-time{
+font-family:'Dancing Script',cursive;
+font-size:1.4rem;
+color:#fff;
+margin-bottom:15px;
+font-weight:700;
+text-shadow:0 2px 8px rgba(0,0,0,0.4);
+}
+
+.timeline-content{
+font-family:'Quicksand',sans-serif;
+font-size:1.3rem;
+line-height:1.8;
+color:#fff;
+text-shadow:0 2px 8px rgba(0,0,0,0.3);
+font-weight:600;
+}
+
+.special-message{
+background:linear-gradient(135deg,rgba(255,255,255,0.4),rgba(255,200,220,0.4));
+border:3px solid rgba(255,255,255,0.6);
+box-shadow:0 0 30px rgba(255,255,255,0.5);
+}
+
+.noor-text{
+font-family:'Dancing Script',cursive;
+font-size:1.5rem;
+line-height:2;
+font-weight:700;
+color:#fff;
+text-shadow:0 2px 10px rgba(0,0,0,0.4);
+}
+
+.highlight{
+font-size:2rem;
+color:#ffd700;
+text-shadow:0 0 20px rgba(255,215,0,0.9),0 0 40px rgba(255,215,0,0.6),0 2px 5px rgba(0,0,0,0.5);
+animation:glowPulse 2s ease-in-out infinite;
+font-family:'Pacifico',cursive;
+display:inline-block;
+}
+
+@keyframes glowPulse{
+0%,100%{transform:scale(1);filter:brightness(1);}
+50%{transform:scale(1.1);filter:brightness(1.3);}
+}
+
+.story-footer{
+margin-top:30px;
+font-family:'Satisfy',cursive;
+font-size:1.6rem;
+color:#fff;
+text-shadow:0 3px 15px rgba(0,0,0,0.4);
+font-style:italic;
+animation:footerFloat 3s ease-in-out infinite;
+}
+
+@keyframes footerFloat{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
 }
 
 .music-btn{
-position:absolute;
-bottom:20px;
-right:20px;
-background:white;
-color:#ff4081;
-padding:10px 15px;
-border-radius:20px;
-font-size:14px;
+position:fixed;
+bottom:30px;
+right:30px;
+background:linear-gradient(135deg,#ff1744,#f50057);
+color:white;
+padding:15px 25px;
+border-radius:50px;
+font-size:16px;
+font-weight:600;
 cursor:pointer;
+border:none;
+box-shadow:0 8px 25px rgba(255,23,68,0.4);
+transition:all 0.3s ease;
+z-index:1000;
+}
+
+.music-btn:hover{
+transform:scale(1.1) rotate(5deg);
+box-shadow:0 12px 35px rgba(255,23,68,0.6);
+}
+
+.music-btn:active{
+transform:scale(0.95);
+}
+
+/* Confetti */
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+background:#ff1744;
+animation:confettiFall 3s linear;
+z-index:9999;
+}
+
+@keyframes confettiFall{
+to{transform:translateY(100vh) rotate(720deg);opacity:0;}
+}
+
+/* Responsive */
+@media(max-width:768px){
+h1{font-size:2.5rem;}
+.typing{font-size:1.5rem;}
+.subtitle{font-size:1.2rem;}
+.rose{font-size:60px;}
+.container{padding:25px;}
+button{padding:15px 30px;font-size:1rem;}
+.button-container{flex-direction:column;height:150px;gap:15px;}
+.success{font-size:1.8rem;}
+.story-container{padding:20px;}
+.story-title{font-size:2rem;}
+.timeline-date{font-size:1.5rem;}
+.timeline-time{font-size:1.2rem;}
+.timeline-content{font-size:1.1rem;}
+.noor-text{font-size:1.3rem;}
+.highlight{font-size:1.6rem;}
+.story-footer{font-size:1.3rem;}
+.timeline::before{left:20px;}
+}
+
+@media(max-width:480px){
+h1{font-size:2rem;}
+.typing{font-size:1.3rem;}
+.rose{font-size:50px;}
+button{padding:12px 25px;}
+.story-title{font-size:1.7rem;}
+.timeline-date{font-size:1.3rem;}
+.timeline-content{font-size:1rem;}
+.noor-text{font-size:1.2rem;}
+.story-footer{font-size:1.2rem;}
 }
 </style>
 </head>
@@ -138,113 +484,259 @@ cursor:pointer;
 <div class="container">
 <div class="rose">🌹</div>
 
-<h1>AMSHIII❤️‍🔥🥹😘</h1>
+<h1>AMSHIII ❤️‍🔥</h1>
 
-<div class="typing" id="typingText"></div>
+<div class="subtitle">My forever Valentine 💕</div>
+
+<div class="typing" id="typingText"><span class="typing-cursor"></span></div>
 
 <div class="countdown" id="countdown"></div>
 
-<div style="position:relative;height:80px;margin-top:20px;">
+<div class="button-container">
 <button id="yesBtn">YES 💘</button>
 <button id="noBtn">NO 😢</button>
 </div>
 
 <div class="success" id="successMsg">
-I LOVE YOU SO MUCH AMSHIII ❤️‍🔥🥹😘  
-You just made me the happiest person alive 💖🌹✨
+<div class="heart-burst">❤️‍🔥💖✨</div>
+I LOVE YOU SO MUCH AMSHIII!<br>
+You just made me the happiest person alive 🥹💕<br>
+<div style="font-size:1.5rem;margin-top:15px;font-family:'Quicksand',sans-serif;">
+Forever yours 🌹💍
+</div>
+
+<div class="story-container" id="storyContainer">
+<div class="story-title">Our Beautiful Story 📖💕</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-date">August 7th, 2025</div>
+<div class="timeline-time">1:15 AM</div>
+<div class="timeline-content">
+The moment that changed my life forever ✨<br>
+You said YES and accepted me 💖<br>
+I still remember that magical moment like it was yesterday
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">The Very First Day</div>
+<div class="timeline-content">
+When we started talking, I knew you were special 🌹<br>
+Every conversation, every message brought us closer 💕
+</div>
+</div>
+<div class="timeline-item special-message">
+<div class="noor-text">
+You are the <span class="highlight">NOOR</span> of my life 🌟<br>
+The light that brightens my darkest days ✨<br>
+My reason to smile, my source of happiness 😊<br>
+My everything, my forever 💍
+</div>
+</div>
+</div>
+<div class="story-footer">
+And this is just the beginning of our beautiful journey together... 🥰💕
+</div>
+</div>
 </div>
 </div>
 
-<button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Music</button>
 
 <audio id="bgMusic" loop>
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5a8e7e4c1a.mp3?filename=romantic-ambient-110397.mp3" type="audio/mpeg">
 </audio>
 
 <script>
+// Enhanced Typing Effect
 const typingText=document.getElementById("typingText");
 const text="Will you be my Valentine? 💖";
+const cursor=document.querySelector(".typing-cursor");
 let index=0;
 
 function typeEffect(){
 if(index<text.length){
-typingText.innerHTML+=text.charAt(index);
+typingText.innerHTML=text.substring(0,index+1)+'<span class="typing-cursor"></span>';
 index++;
-setTimeout(typeEffect,80);
+setTimeout(typeEffect,100);
 }
 }
 typeEffect();
 
-/* Countdown to Feb 14 */
+// Countdown to Feb 14
 function updateCountdown(){
-const valentine=new Date(new Date().getFullYear(),1,14);
 const now=new Date();
+const currentYear=now.getFullYear();
+let valentine=new Date(currentYear,1,14);
+if(now>valentine){
+valentine=new Date(currentYear+1,1,14);
+}
 const diff=valentine-now;
 
 if(diff>0){
 const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+if(days>0){
 document.getElementById("countdown").innerHTML=
-days+" days until our special Valentine’s Day ❤️";
+days+" days until our special Valentine's Day ❤️";
 }else{
 document.getElementById("countdown").innerHTML=
-"Today is our Valentine’s Day ❤️";
+hours+" hours until Valentine's Day ❤️";
+}
+}else{
+document.getElementById("countdown").innerHTML=
+"🎉 Today is our Valentine's Day! 🎉";
 }
 }
 updateCountdown();
+setInterval(updateCountdown,60000);
 
-/* NO button escapes & YES grows */
+// NO button escapes & YES grows
 const noBtn=document.getElementById("noBtn");
 const yesBtn=document.getElementById("yesBtn");
 let scale=1;
+let noFloating=false;
+
+function makeNoFloat(){
+if(!noFloating){
+const rect=noBtn.getBoundingClientRect();
+noBtn.classList.add("floating");
+noBtn.style.left=rect.left+"px";
+noBtn.style.top=rect.top+"px";
+noFloating=true;
+}
+}
 
 function moveButton(){
-const x=Math.random()*(window.innerWidth-100);
-const y=Math.random()*(window.innerHeight-80);
+makeNoFloat();
+
+const x=Math.random()*(window.innerWidth-noBtn.offsetWidth-40)+20;
+const y=Math.random()*(window.innerHeight-noBtn.offsetHeight-40)+20;
 noBtn.style.left=x+"px";
 noBtn.style.top=y+"px";
 
-scale+=0.1;
-yesBtn.style.transform="scale("+scale+")";
+scale+=0.15;
+yesBtn.style.transform="scale("+Math.min(scale,2)+")";
 }
 
 noBtn.addEventListener("mouseover",moveButton);
-noBtn.addEventListener("touchstart",moveButton);
-
-/* YES click */
-yesBtn.addEventListener("click",()=>{
-document.getElementById("successMsg").style.display="block";
-launchHearts();
+noBtn.addEventListener("touchstart",(e)=>{
+e.preventDefault();
+moveButton();
+});
+noBtn.addEventListener("click",(e)=>{
+e.preventDefault();
+moveButton();
 });
 
-/* Hearts explosion */
+// YES click - Enhanced celebration
+yesBtn.addEventListener("click",()=>{
+document.querySelector(".button-container").style.display="none";
+document.getElementById("successMsg").style.display="block";
+launchConfetti();
+launchHearts();
+setTimeout(launchConfetti,800);
+setTimeout(launchHearts,1500);
+});
+
+// Hearts explosion
 function launchHearts(){
-for(let i=0;i<50;i++){
+const hearts=["❤️","💖","💕","💗","💓","💝","💘","💞"];
+for(let i=0;i<40;i++){
+setTimeout(()=>{
 let heart=document.createElement("div");
 heart.classList.add("heart");
-heart.innerHTML="❤️";
+heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
 heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*20+15)+"px";
-heart.style.animationDuration=(Math.random()*3+3)+"s";
+heart.style.fontSize=(Math.random()*25+20)+"px";
+heart.style.animationDuration=(Math.random()*4+4)+"s";
+heart.style.animationDelay=Math.random()+"s";
 document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),6000);
+setTimeout(()=>heart.remove(),8000);
+},i*50);
 }
 }
 
-/* Sparkles background */
-for(let i=0;i<50;i++){
+// Confetti explosion
+function launchConfetti(){
+const colors=["#ff1744","#f50057","#ff4081","#ffb3c6","#ffd700","#ff6f91"];
+for(let i=0;i<100;i++){
+setTimeout(()=>{
+let confetti=document.createElement("div");
+confetti.classList.add("confetti");
+confetti.style.left=Math.random()*100+"vw";
+confetti.style.top="-10px";
+confetti.style.background=colors[Math.floor(Math.random()*colors.length)];
+confetti.style.width=(Math.random()*8+5)+"px";
+confetti.style.height=(Math.random()*12+5)+"px";
+confetti.style.borderRadius=Math.random()>0.5?"50%":"0";
+confetti.style.animationDuration=(Math.random()*2+2)+"s";
+document.body.appendChild(confetti);
+setTimeout(()=>confetti.remove(),3000);
+},i*15);
+}
+}
+
+// Enhanced Sparkles background with variety
+for(let i=0;i<60;i++){
 let sparkle=document.createElement("div");
 sparkle.classList.add("sparkle");
 sparkle.style.top=Math.random()*100+"vh";
 sparkle.style.left=Math.random()*100+"vw";
+sparkle.style.animationDelay=Math.random()*2+"s";
+sparkle.style.width=(Math.random()*4+3)+"px";
+sparkle.style.height=(Math.random()*4+3)+"px";
 document.body.appendChild(sparkle);
 }
 
-/* Music toggle */
-const music=document.getElementById("bgMusic");
-function toggleMusic(){
-if(music.paused){music.play();}
-else{music.pause();}
+// Floating particles
+for(let i=0;i<30;i++){
+let particle=document.createElement("div");
+particle.classList.add("particle");
+particle.style.left=Math.random()*100+"vw";
+particle.style.bottom="0";
+particle.style.animationDelay=Math.random()*4+"s";
+particle.style.animationDuration=(Math.random()*6+4)+"s";
+document.body.appendChild(particle);
 }
+
+// Continuous heart flow in background
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="💕";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*15+10)+"px";
+heart.style.animationDuration=(Math.random()*6+6)+"s";
+heart.style.opacity="0.6";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),12000);
+},1200);
+
+// Music toggle with button text update
+const music=document.getElementById("bgMusic");
+const musicBtn=document.getElementById("musicBtn");
+let musicPlaying=false;
+
+function toggleMusic(){
+if(music.paused){
+music.play();
+musicBtn.innerHTML="🔊 Playing";
+musicPlaying=true;
+}else{
+music.pause();
+musicBtn.innerHTML="🎵 Play Music";
+musicPlaying=false;
+}
+}
+
+// Auto-play attempt (some browsers block this)
+window.addEventListener("click",()=>{
+if(!musicPlaying){
+music.play().catch(()=>{});
+musicBtn.innerHTML="🔊 Playing";
+musicPlaying=true;
+}
+},{once:true});
 </script>
 
 </body>
