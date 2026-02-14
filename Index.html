@@ -315,25 +315,6 @@ animation:heartBeat 1.2s ease-in-out infinite;
 20%,40%{transform:scale(1.1);}
 }
 
-/* Spotify Player */
-.spotify-player{
-margin-top:25px;
-padding:20px;
-background:rgba(255,255,255,0.3);
-border-radius:20px;
-border:2px solid rgba(255,255,255,0.4);
-animation:playerFadeIn 1s ease 0.5s backwards;
-}
-
-@keyframes playerFadeIn{
-from{opacity:0;transform:scale(0.9);}
-to{opacity:1;transform:scale(1);}
-}
-
-.spotify-player iframe{
-border-radius:12px;
-}
-
 /* Story Section */
 .story-container{
 margin-top:40px;
@@ -477,32 +458,12 @@ font-weight:500;
 50%{transform:translateY(-8px);}
 }
 
-.music-btn{
+/* Hidden YouTube player */
+#youtubePlayer{
 position:fixed;
-bottom:30px;
-right:30px;
-background:linear-gradient(135deg,#C41E3A,#8B0000);
-color:white;
-padding:15px 25px;
-border-radius:50px;
-font-size:16px;
-font-weight:600;
-cursor:pointer;
-border:none;
-box-shadow:0 8px 25px rgba(196,30,58,0.4);
-transition:all 0.3s ease;
-z-index:1000;
-font-family:'Lora',serif;
-display:none;
-}
-
-.music-btn:hover{
-transform:scale(1.1) rotate(5deg);
-box-shadow:0 12px 35px rgba(196,30,58,0.6);
-}
-
-.music-btn:active{
-transform:scale(0.95);
+top:-9999px;
+left:-9999px;
+pointer-events:none;
 }
 
 /* Responsive */
@@ -524,7 +485,6 @@ button{padding:15px 30px;font-size:1rem;}
 .highlight{font-size:1.8rem;}
 .story-footer{font-size:1.4rem;}
 .timeline::before{left:20px;}
-.spotify-player iframe{height:152px;}
 }
 
 @media(max-width:480px){
@@ -537,7 +497,6 @@ button{padding:12px 25px;}
 .timeline-content{font-size:1.1rem;}
 .noor-text{font-size:1.3rem;}
 .story-footer{font-size:1.3rem;}
-.spotify-player{padding:15px;}
 }
 </style>
 </head>
@@ -566,11 +525,6 @@ I LOVE YOU SO MUCH AMSHIII!<br>
 You just made me the happiest person alive 🥹💕<br>
 <div style="font-size:1.6rem;margin-top:18px;font-family:'Lora',serif;">
 Forever yours 🌹💍
-</div>
-
-<!-- Spotify Player -->
-<div class="spotify-player">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6WlARP6h4CDVOcY386wW0W?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
 
 <div class="story-container" id="storyContainer">
@@ -608,9 +562,42 @@ And this is just the beginning of our beautiful journey together... 🥰💕
 </div>
 </div>
 
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Music</button>
+<!-- Hidden YouTube Player -->
+<div id="youtubePlayer"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
+// YouTube Player API
+let player;
+function onYouTubeIframeAPIReady() {
+player = new YT.Player('youtubePlayer', {
+height: '1',
+width: '1',
+videoId: 'nDjloeIB3Pc',
+playerVars: {
+'autoplay': 0,
+'controls': 0,
+'loop': 1,
+'playlist': 'nDjloeIB3Pc'
+},
+events: {
+'onReady': onPlayerReady
+}
+});
+}
+
+function onPlayerReady(event) {
+// Player is ready
+}
+
+function playYouTubeMusic() {
+if (player && player.playVideo) {
+player.playVideo();
+player.setVolume(70); // Set volume to 70%
+}
+}
+
 // Enhanced Typing Effect
 const typingText=document.getElementById("typingText");
 const text="Will you be my Valentine? 💖";
@@ -692,10 +679,16 @@ e.preventDefault();
 moveButton();
 });
 
-// YES click - Beautiful gentle celebration
+// YES click - Beautiful gentle celebration + AUTOPLAY MUSIC
 yesBtn.addEventListener("click",()=>{
 document.querySelector(".button-container").style.display="none";
 document.getElementById("successMsg").style.display="block";
+
+// Play YouTube music automatically
+setTimeout(()=>{
+playYouTubeMusic();
+}, 500);
+
 launchGentleOrbs();
 launchPetals();
 launchWaves();
@@ -775,11 +768,6 @@ orb.style.opacity="0.4";
 document.body.appendChild(orb);
 setTimeout(()=>orb.remove(),20000);
 },2000);
-
-// Music toggle (not needed anymore as Spotify player is embedded)
-function toggleMusic(){
-// Spotify player handles music
-}
 </script>
 
 </body>
